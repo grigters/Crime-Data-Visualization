@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
-from config import dbuser, dbpasswd, dburi, dbport, dbname
+#from config import dbuser, dbpasswd, dburi, dbport, dbname
 
 from flask import Flask, jsonify
 
@@ -15,19 +15,19 @@ from flask import Flask, jsonify
 # Database Setup
 #################################################
 
-engine = create_engine(f"mysql://{dbuser}:{dbpasswd}@{dburi}:{dbport}/{dbname}")
+#engine = create_engine(f"mysql://{dbuser}:{dbpasswd}@{dburi}:{dbport}/{dbname}")
 # Base.metadata.create_all(engine)
 
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
-Base.prepare(engine, reflect=True)
+#Base.prepare(engine, reflect=True)
 
 # Save references to each table
-Crime = Base.classes.crime_data_2018
+#Crime = Base.classes.crime_data_2018
 
 # Create our session (link) from Python to the DB
-session = Session(engine)
+#session = Session(engine)
 
 # Create an instance of Flask
 app = Flask(__name__)
